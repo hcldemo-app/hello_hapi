@@ -7,6 +7,7 @@ WORKDIR /usr/src/app
 # `npm install` will be cached on future builds if only the app code changed
 COPY package*.json ./
 RUN npm install
+RUN npm audit fix
 
 # copy the app
 COPY . .
