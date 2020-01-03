@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 # `npm install` will be cached on future builds if only the app code changed
 COPY package*.json ./
 RUN npm install
-RUN npm audit fix
+
 
 # copy the app
 COPY . .
@@ -15,4 +15,5 @@ COPY . .
 # expose port 3000 and start the app
 EXPOSE 3000
 CMD [ "npm", "start" ]
+CMD [ "npm", "audit fix" ]
 
